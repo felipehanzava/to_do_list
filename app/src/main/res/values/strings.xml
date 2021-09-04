@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">To Do list</string>
+    <string name="text_title">Tarefas</string>
+    <string name="text_hint_titulo">Título</string>
+    <string name="text_hint_description">Descrição</string>
+    <string name="text_hint_data">Data</string>
+</resources>
