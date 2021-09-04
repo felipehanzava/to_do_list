@@ -89,7 +89,7 @@
         app:layout_constraintTop_toTopOf="@+id/text_input_data"
         app:layout_constraintEnd_toEndOf="@id/end"
         app:layout_constraintStart_toEndOf="@+id/text_input_data"
-        android:hint="Hora"
+        android:hint="@string/text_hint_hora"
         app:startIconDrawable="@drawable/ic_time"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -104,7 +104,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bottom_criar"
         style="@style/Widget.MaterialComponents.Button"
-        android:text="Criar Tarefa"
+        android:text="@string/text_criar"
         android:textAllCaps="false"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:text="Cancelar"
+        android:text="@string/text_cancelar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/end"
