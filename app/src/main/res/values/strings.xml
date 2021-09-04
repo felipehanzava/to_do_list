@@ -7,4 +7,5 @@
     <string name="text_cancelar">Cancelar</string>
     <string name="text_criar">Criar Tarefa</string>
     <string name="text_hint_hora">Hora</string>
+    <string name="description_nova_tarefa">Nova Tarefa</string>
 </resources>
