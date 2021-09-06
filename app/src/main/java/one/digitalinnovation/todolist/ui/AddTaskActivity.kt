@@ -1,5 +1,6 @@
 package one.digitalinnovation.todolist.ui
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,16 @@ class AddTaskActivity: AppCompatActivity() {
 
         binding = ActivityAddTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (intent.hasExtra(TASK_ID)){
+            val taskID = intent.getIntExtra(TASK_ID, 0)
+            TaskDataSource.findByID(taskID)?.let{
+                binding.textInputTitle.text = it.title
+                binding.textInputDescription.text = it.description
+                binding.textInputData.text = it.date
+                binding.textInputHora.text = it.hour
+            }
+        }
 
         insertListeners()
     }
@@ -60,12 +71,21 @@ class AddTaskActivity: AppCompatActivity() {
                 title = binding.textInputTitle.text,
                 description = binding.textInputDescription.text,
                 date = binding.textInputData.text,
-                hour = binding.textInputHora.text
+                hour = binding.textInputHora.text,
+                id = intent.getIntExtra(TASK_ID, 0)
             )
+
             TaskDataSource.insertTask(task)
-            Log.e("TAG", "insertListeners:  " + TaskDataSource.getList())
+
+            setResult(Activity.RESULT_OK)
+            finish()
+
 
         }
+    }
+
+    companion object {
+        const val TASK_ID = "task_id"
     }
 
 }
